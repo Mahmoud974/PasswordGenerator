@@ -1,0 +1,58 @@
+$white: rgb(46, 46, 46, 0.85);
+$red: #f71735;
+body {
+  background: $red;
+  color: #fff;
+  cursor: pointer;
+}
+
+@mixin flexbox($margin) {
+  display: flex;
+  justify-content: center;
+  margin: $margin;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.myBox {
+  @include flexbox(auto);
+  // @extend #flexbox;
+  height: 550px;
+  width: 560px;
+  background: $white;
+  border-radius: 20px;
+
+  .inputDisplay {
+    @include flexbox(10px auto);
+    height: 50px;
+    width: 350px;
+    background: $red;
+    border: none;
+    border-radius: 6px;
+    text-align: center;
+  }
+  .ok {
+    background: rgb(255, 0, 0);
+  }
+  .boxBlack {
+    @include flexbox(auto);
+    background: var(--color); //#2a2c31
+    width: 70%;
+    height: 50px;
+    border-radius: 8px;
+  }
+  //Generate Password
+  .btn-danger {
+    @include flexbox(10px auto);
+  }
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+
+  background: $red;
+  cursor: pointer;
+}
+input[type="checkbox"]::-webkit-slider-thumb {
+  background: $red;
+}
